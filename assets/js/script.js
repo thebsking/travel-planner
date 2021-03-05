@@ -7,3 +7,10 @@ $( function() {
   $( function() {
     $( "#datepicker2" ).datepicker();
   } );
+  $( function() {
+    $( "#depCity" ).selectmenu();
+ 
+    $( "#arrCity" ).selectmenu();
+ 
+   
+  } );

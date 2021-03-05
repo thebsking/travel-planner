@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
@@ -14,27 +16,42 @@
     <!-- Header -->
     <div class="header">
         <div class="webName">
-            WebsiteName
+            Trip Planner
         </div>
         <!-- Nav Buttons -->
         <div class="headerNav">
-                <button class="flights">Flights</button>
-                <button class="sights">See What's Around!</button>
+                <label class="flights">Flights</label>
+                <label class="sights">See What's Around!</label>
         </div>
     </div>
     <!-- FlightPlanner -->
 <div class="FlightPlanner">
     <div class="flightHeader">Flight Planner</div>
-        <div class="cityDepart">
-            <div class="departHead">
-             City of Departure
-            </div>
-        </div>
-        <div class="cityArrive">
-            <div class="arriveHead">
-             City of Arrival
-            </div>
-        </div>
+   <div class="departureCity">
+    <fieldset>
+        <label for="depCity">Pick a city to depart from</label>
+        <select name="depCity" id="depCity">
+          <option>Slower</option>
+          <option>Slow</option>
+          <option selected="selected">Medium</option>
+          <option>Fast</option>
+          <option>Faster</option>
+        </select>
+    </fieldset>
+   </div>
+   <div class="arrivalCity">
+    <fieldset>
+        <label for="arrCity">Pick a destination</label>
+        <select name="arrCity" id="arrCity">
+          <option>Slower</option>
+          <option>Slow</option>
+          <option selected="selected">Medium</option>
+          <option>Fast</option>
+          <option>Faster</option>
+        </select>
+    </fieldset>
+   </div>
+</div>
         <!-- DatePickers -->
     <div class="datePickers">
         <div class="departureDate">
