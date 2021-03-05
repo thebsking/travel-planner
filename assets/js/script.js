@@ -15,7 +15,7 @@ function getCities(origin, destination){
     })
         .then(response => response.json())
         .then(data => {
-            originCity = data.Places[0].CityId;
+            originCity = data.Places[0].PlaceId;
             console.log(originCity)
         })
         .catch(err => {
@@ -31,14 +31,28 @@ function getCities(origin, destination){
     })
         .then(response => response.json())
         .then(data => {
-            destinationCity = data.Places[0].CityId
+            destinationCity = data.Places[0].PlaceId;
             console.log(destinationCity)
         })
         .catch(err => {
             console.error(err);
         });
 };  
-function getFlights (origin, destination)
+function getFlights (origin, destination){
+  fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/${originCity}/${destinationCity}/${leaveDate}?inboundpartialdate=${returnDate}`, {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "ce048e25a7msh11dfbb222457908p124048jsn5f6dec3c93ab",
+		"x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com"
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.error(err);
+});
+}
 
 //build maps api calls https://developers.google.com/maps/documentation/javascript/overview
 
