@@ -1,7 +1,8 @@
 //declare global vars
 let originCity;
 let destinationCity;
-
+let leaveDate = document.$('#datepicker1').val()
+let returnDate = document.$('#datepicker2').val()
 
 //build weather api calls https://rapidapi.com/skyscanner/api/skyscanner-flight-search/endpoints
 function getCities(origin, destination){
