@@ -1,0 +1,10 @@
+.header{
+    background-color: darkgrey;
+    display: flex;
+    height:100px;
+}
+.headerNav{
+    position:relative;
+    left:80%;
+    top: 35px;
+}
