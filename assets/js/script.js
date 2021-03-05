@@ -1,3 +1,11 @@
+//DatePicker Functions
+$( function() {
+    $( "#datepicker1" ).datepicker();
+  } );
+
+  $( function() {
+    $( "#datepicker2" ).datepicker();
+  } );
 
 //declare global vars
 let originCity;
@@ -61,14 +69,4 @@ function getFlights (origin, destination){
 //add click event for submission
 
 //render api response data to page
-
-
-//DatePicker Functions
-$( function() {
-    $( "#datepicker1" ).datepicker();
-  } );
-
-  $( function() {
-    $( "#datepicker2" ).datepicker();
-  } );
 
