@@ -1,3 +1,4 @@
+
 //DatePicker Functions
 $( function() {
     $( "#datepicker1" ).datepicker();
@@ -55,7 +56,6 @@ function getCities(origin, destination){
         });
 };  
 function getFlights (origin, destination){
-  fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/${originCity}/${destinationCity}/${leaveDate}?inboundpartialdate=${returnDate}`, {
   let leaveDate = $('#datepicker1').val()
   let returnDate = $('#datepicker2').val()
   //dates currently not set to correct format
@@ -67,8 +67,6 @@ function getFlights (origin, destination){
 		"x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com"
 	}
 })
-.then(response => {
-	console.log(response);
 .then(response => response.json())
 .then(data => {
   console.log(data)
