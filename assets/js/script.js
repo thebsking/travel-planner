@@ -82,7 +82,7 @@ function getFlights (origin, destination){
   let flightEL = $('#flightDisplay')
   flightEL.append(`Cheapest flight is: $${flightObject.Quotes[0].MinPrice}`)
   secondFlight = flightEL.append('<p>')
-  secondFlight.append(`other options include: $${flightObject.Quotes[1].MinPrice}`)
+  secondFlight.append(`other options start at: $${flightObject.Quotes[1].MinPrice}`)
   
 })
 .catch(err => {
@@ -91,6 +91,11 @@ function getFlights (origin, destination){
 }
 
 //add click event for submission
-$('.flights').on('click', function(){
+$('.submitButton').on('click', function(){
   getCities($('#depCity').val(), $('#arrCity').val());
 })
+
+//google maps geocode fetch
+function mapsGeoCode(){
+fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${originCity}&key=AIzaSyCXR3B8D3lybOR4VE3nXoUDrf7V8-NTiB8`)
+}
