@@ -83,7 +83,7 @@ function getFlights (origin, destination){
   flightEL.append(`Cheapest flight is: $${flightObject.Quotes[0].MinPrice}`)
   secondFlight = flightEL.append('<p>')
   secondFlight.append(`other options include: $${flightObject.Quotes[1].MinPrice}`)
-  seeMore = secondFlight.append(`<a href="https://www.skyscanner.com/transport/flights/cmha/orlb/210316/210323/?adults=1&adultsv2=1&cabinclass=economy&children=0&childrenv2=&destinationentityid=27542899&inboundaltsenabled=false&infants=0&originentityid=27539848&outboundaltsenabled=false&preferdirects=false&preferflexible=false&ref=home&rtn=1">See More</a>`)
+  
 })
 .catch(err => {
 	console.error(err);
