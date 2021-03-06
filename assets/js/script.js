@@ -18,6 +18,7 @@ $( function() {
   //declare global vars
 let originCity;
 let destinationCity;
+let flightObject;
 
 
 //build weather api calls https://rapidapi.com/skyscanner/api/skyscanner-flight-search/endpoints
@@ -75,6 +76,10 @@ function getFlights (origin, destination){
 .then(response => response.json())
 .then(data => {
   console.log(data)
+  flightObject = data;
+  //render api response data to page
+  let flightEL = $('#flightDisplay')
+  flightEL.text(`Cheapest flight is: $${flightObject.Quotes[0].MinPrice}`)
 })
 .catch(err => {
 	console.error(err);
@@ -121,5 +126,4 @@ $('.flights').on('click', function(){
 })
 
 
-//render api response data to page
 
