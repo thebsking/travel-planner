@@ -4,7 +4,8 @@ body{
 }
 .header{
     background-color: darkgrey;
-    display:flex;
+    padding: 5px;
+    
 }
 .webName{
     
@@ -18,7 +19,6 @@ body{
 }
 .flights{
     float: left;
-    
     position:relative;
     left: 50%;
     top:-35px;
@@ -34,7 +34,7 @@ body{
     float: left;
     position:relative;
     left: 60%;
-    top: -25px;
+    top: -35px;
     font-family: 'Lobster', cursive;
     font-size: 30px;
     
@@ -53,47 +53,59 @@ body{
     font-family: "Lobster",cursive;
     font-size: 30px;
     padding:8px 0 8px 0;
+     margin: 20px;
+
 }
 
 .weatherHeader{
-    
     font-family: "Lobster",cursive;
     font-size: 30px;
     padding:8px 0 8px 0;
+    margin: 20px;
 }
 .depHeader{
     font-family: "Lobster",cursive;
     font-size: 25px;
-    padding:8px 0 8px 0;
+    margin: 5px;
+    
 }
 .arrHeader{
     font-family: "Lobster",cursive;
     font-size: 25px;
-    padding:8px 0 8px 0;
+    margin: 5px;
+    
 }
 
 
 label{
-    text-align: center;
-    font-size:25px ;
+   
+    font-size:22px;
 }
 .flightPlanner{
     font-family: "Lobster",cursive;
-    text-align: center;
+    margin-left:0px;
+    position: relative;
+    left:20px;
 }
+
 .datePickers{
-    margin:20px;
-    text-align: center;
+    margin:8px;
+    position: relative;
+    left: 150px;
 }
 .textField{
-    text-align: center;
-    margin: 10px;
+    
+    margin: 5px;
 }
-.weatherContent{
+.dateField input{
     text-align: center;
 }
+
 fieldset {
     border: 0;
+    flex: wrap;
+    flex-direction: column;
+    margin-left: 20px;
   }
   label {
     display: block;
@@ -104,40 +116,82 @@ fieldset {
   }
 .submitButton{
     font-family: "lobster", cursive;
-    font-size: 15px;
-    width: 150px;
+    font-size: 30px;
+    width: 300px;
     background-color: rgb(40, 115, 214);
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
 }
 .submitButton:hover{
     font-size: 30px;
-    width: 300px;
+    width: 350px;
     background-color: rgb(108, 147, 199);
     color: white;
     transition: ease 10ms;
 
 }
   @media screen and (max-width:768px){
-      .header{
-          height: 60px;
+    *{
+
+    }
+      
+    .header{
+          height: 100px;
           padding:5px;
       }
     .webName{
-        font-size: 25px;
+        font-size: 35px;
         position: relative;
         top:4px;
       }
    .flights {
           position: relative;
-          top: 12px;
-          left:75px;
-          font-size: 18px;
+          top: 8px;
+          left:250px;
+          font-size: 25px;
           margin-right: 5px;
    }
    .sights {
     position: relative;
-    top: 12px;
-    left:80px;
-    font-size: 18px;
+    top: 8px;
+    left: 280px;
+    font-size: 25px;
    }
+fieldset{
+    margin-left: 90px;
+}
+label{
+    font-size: 25px;
+}
+.flightHeader{
+    position: relative;
+    
+    margin: 15px 10px;
+}
+.flightPlanner{
+    font-family: "Lobster",cursive;
+    
+}
+.datePickers{
+    margin-bottom: 5px;
+    
+}
+
+.dateField{
+    position:relative;
+    left:-80px;
+}
+.textField{
+    
+    margin: 5px;
+}
+.weatherContent{
+    
+}
+.submitButton{
+    position: relative;
+    left: -65px;
+}
 }
   
