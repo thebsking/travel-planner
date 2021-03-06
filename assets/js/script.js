@@ -88,42 +88,70 @@ function getFlights (origin, destination){
 
 //build maps api calls https://developers.google.com/maps/documentation/javascript/overview
 function getAttractions(destination){
-  var map;
-  var service;
-  var infowindow;
-
-  function initialize() {
-    var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
-
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: pyrmont,
-        zoom: 15
-      });
-
-    var request = {
-      location: pyrmont,
-      radius: '500',
-      query: 'restaurant'
+  function initMap() {
+    // Create the map.
+    const pyrmont = { lat: 40, lng: -83 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      center: pyrmont,
+      zoom: 17,
+      mapId: "8d193001f940fde3",
+    });
+    // Create the places service.
+    const service = new google.maps.places.PlacesService(map);
+    let getNextPage;
+    const moreButton = document.getElementById("more");
+  
+    moreButton.onclick = function () {
+      moreButton.disabled = true;
+  
+      if (getNextPage) {
+        getNextPage();
+      }
     };
-
-    service = new google.maps.places.PlacesService(map);
-    service.textSearch(request, callback);
+    // Perform a nearby search.
+    service.nearbySearch(
+      { location: pyrmont, radius: 1000, type: "attractions" },
+      (results, status, pagination) => {
+        if (status !== "OK" || !results) return;
+        addPlaces(results, map);
+        moreButton.disabled = !pagination || !pagination.hasNextPage;
+  
+        if (pagination && pagination.hasNextPage) {
+          getNextPage = () => {
+            // Note: nextPage will call the same handler function as the initial call
+            pagination.nextPage();
+          };
+        }
+      }
+    );
   }
-
-  function callback(results, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      for (var i = 0; i < results.length; i++) {
-        var place = results[i];
-        createMarker(results[i]);
+  
+  function addPlaces(places, map) {
+    const placesList = document.getElementById("places");
+  
+    for (const place of places) {
+      if (place.geometry && place.geometry.location) {
+        const image = {
+          url: place.icon,
+          size: new google.maps.Size(71, 71),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(17, 34),
+          scaledSize: new google.maps.Size(25, 25),
+        };
+        new google.maps.Marker({
+          map,
+          icon: image,
+          title: place.name,
+          position: place.geometry.location,
+        });
+        const li = document.createElement("li");
+        li.textContent = place.name;
+        placesList.appendChild(li);
+        li.addEventListener("click", () => {
+          map.setCenter(place.geometry.location);
+        });
       }
     }
   }
 }
-
-//add click event for submission
-$('.flights').on('click', function(){
-  getCities($('#depCity').val(), $('#arrCity').val());
-})
-
-
 
