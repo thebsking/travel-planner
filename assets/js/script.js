@@ -58,6 +58,8 @@ function getCities(origin, destination){
 function getFlights (origin, destination){
   let leaveDate = $('#datepicker1').val()
   let returnDate = $('#datepicker2').val()
+  //dates currently not set to correct format
+  //maybe use moment.js? 
   fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/${origin}/${destination}/2021-03-05?inboundpartialdate=2021-03-10`, {
 	"method": "GET",
 	"headers": {
