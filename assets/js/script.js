@@ -7,13 +7,13 @@ $( function() {
   $( function() {
     $( "#datepicker2" ).datepicker();
   } );
-  $( function() {
-    $( "#depCity" ).selectmenu();
+  // $( function() {
+  //   $( "#depCity" ).selectmenu();
  
-    $( "#arrCity" ).selectmenu();
+  //   $( "#arrCity" ).selectmenu();
  
    
-  } );
+  // } );
 
   //declare global vars
 let originCity;
@@ -122,7 +122,7 @@ function getAttractions(destination){
 
 //add click event for submission
 $('.flights').on('click', function(){
-  getCities('Columbus', 'Orlando');
+  getCities($('#depCity').val(), $('#arrCity').val());
 })
 
 
