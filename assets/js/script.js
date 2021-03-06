@@ -116,6 +116,11 @@ searchBtn.on('click', function(e) {
 //build maps api calls https://developers.google.com/maps/documentation/javascript/overview
 
 //add click event for submission
+$('.flights').on('click', function(){
+  getCities();
+  getFlights();
+})
+
 
 //render api response data to page 
 )
