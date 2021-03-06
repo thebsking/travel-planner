@@ -91,12 +91,12 @@ fieldset {
        margin-left: 20px;
    }
    button:hover {
-       background-color: rgb(71, 71, 226);
+       background-color: rgb(35, 35, 221);
    }
 
    button:focus {
        border: none;
-       outline-color: rgb(71, 71, 226);
+       outline-color: rgb(35, 35, 221);
    }
 
    .searchInput {
