@@ -6,12 +6,18 @@ $( function() {
   $( function() {
     $( "#datepicker2" ).datepicker();
   } );
+  $( function() {
+    $( "#depCity" ).selectmenu();
+ 
+    $( "#arrCity" ).selectmenu();
+ 
+   
+  } );
 
-//declare global vars
+  //declare global vars
 let originCity;
 let destinationCity;
-let leaveDate = document.$('#datepicker1').val()
-let returnDate = document.$('#datepicker2').val()
+
 
 //build weather api calls https://rapidapi.com/skyscanner/api/skyscanner-flight-search/endpoints
 function getCities(origin, destination){
@@ -50,6 +56,11 @@ function getCities(origin, destination){
 };  
 function getFlights (origin, destination){
   fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/${originCity}/${destinationCity}/${leaveDate}?inboundpartialdate=${returnDate}`, {
+  let leaveDate = $('#datepicker1').val()
+  let returnDate = $('#datepicker2').val()
+  //dates currently not set to correct format
+  //maybe use moment.js? 
+  fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/${origin}/${destination}/2021-03-05?inboundpartialdate=2021-03-10`, {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-key": "ce048e25a7msh11dfbb222457908p124048jsn5f6dec3c93ab",
@@ -58,6 +69,9 @@ function getFlights (origin, destination){
 })
 .then(response => {
 	console.log(response);
+.then(response => response.json())
+.then(data => {
+  console.log(data)
 })
 .catch(err => {
 	console.error(err);
@@ -67,6 +81,11 @@ function getFlights (origin, destination){
 //build maps api calls https://developers.google.com/maps/documentation/javascript/overview
 
 //add click event for submission
+$('.flights').on('click', function(){
+  getCities();
+  getFlights();
+})
+
 
 //render api response data to page
 

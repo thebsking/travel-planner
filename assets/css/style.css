@@ -1,10 +1,60 @@
 .header{
     background-color: darkgrey;
-    display: flex;
+    
+    flex: wrap;
     height:100px;
 }
-.headerNav{
+
+.webName{
+    
     position:relative;
-    left:80%;
-    top: 35px;
+    color: white;
+    top: 30%;
+    left: 10%;
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+
 }
+.flights{
+    float: left;
+    margin: 10px;
+    position:relative;
+    left: 50%;
+    top:-35px;
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+}
+.flights:hover{
+    opacity: 80%;
+    color: white;
+}
+.sights{
+    position:relative;
+    left: 60%;
+    top: -25px;
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+}
+.sights:hover{
+    opacity: 80%;
+    color: white;
+}
+
+.datePickers{
+    margin:20px;
+}
+.cityArrive{
+    float: right;
+    position:relative;
+    right:20%;
+}
+fieldset {
+    border: 0;
+  }
+  label {
+    display: block;
+    margin: 30px 0 0 0;
+  }
+  .overflow {
+    height: 200px;
+  }
