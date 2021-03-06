@@ -83,4 +83,58 @@ fieldset {
     top:-30px;      
 }
    }
+
+   button{
+       width: 50px;
+       height: 30px;
+       margin-top: 10px;
+       margin-left: 20px;
+   }
+   button:hover {
+       background-color: rgb(71, 71, 226);
+   }
+
+   button:focus {
+       border: none;
+       outline-color: rgb(71, 71, 226);
+   }
+
+   .searchInput {
+       width: 125px;
+       height: 30px;
+       margin-left: 50px;
+       margin-top: 10px;
+   }
+
+   .container {
+    display: flex;
+    flex-direction: row;
+    max-width: 640px;
+    height: 100%;
+    Margin: -50px 400px 0px 400px; 
+   }
+
+   .CityName {
+    margin-left: 100px;
+}
+
+.row1 {
+    margin-left:100px;
+    font-size: larger;
+}
+
+.row2 {
+    Margin-left: 100px;
+    font-size: larger;
+}
+
+.row3 {
+    margin-left: 100px;
+    font-size: larger;
+}
+
+.row4 {
+    margin-left:100px;
+    font-size: larger;
+}
   
