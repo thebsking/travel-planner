@@ -1,9 +1,11 @@
+body{
+    /* background-color: darkgrey; */
+    
+}
 .header{
     background-color: darkgrey;
-    flex: wrap;
-    height:100px;
+    display:flex;
 }
-
 .webName{
     
     position:relative;
@@ -16,7 +18,7 @@
 }
 .flights{
     float: left;
-    margin: 10px;
+    
     position:relative;
     left: 50%;
     top:-35px;
@@ -37,6 +39,11 @@
     font-size: 30px;
     
 }
+.dateField{
+    font-family: "Lobster",cursive;
+    font-size: 20px;
+    padding:8px 0 8px 0;
+}
 .sights:hover{
     opacity: 80%;
     color: white;
@@ -45,21 +52,46 @@
 .flightHeader{
     font-family: "Lobster",cursive;
     font-size: 30px;
+    padding:8px 0 8px 0;
 }
+
 .weatherHeader{
     
     font-family: "Lobster",cursive;
     font-size: 30px;
-    
+    padding:8px 0 8px 0;
+}
+.depHeader{
+    font-family: "Lobster",cursive;
+    font-size: 25px;
+    padding:8px 0 8px 0;
+}
+.arrHeader{
+    font-family: "Lobster",cursive;
+    font-size: 25px;
+    padding:8px 0 8px 0;
+}
+
+
+label{
+    text-align: center;
+    font-size:25px ;
 }
 .flightPlanner{
     font-family: "Lobster",cursive;
-    font-size: 30px;
+    text-align: center;
 }
 .datePickers{
     margin:20px;
+    text-align: center;
 }
-
+.textField{
+    text-align: center;
+    margin: 10px;
+}
+.weatherContent{
+    text-align: center;
+}
 fieldset {
     border: 0;
   }
@@ -70,17 +102,42 @@ fieldset {
   .overflow {
     height: 200px;
   }
+.submitButton{
+    font-family: "lobster", cursive;
+    font-size: 15px;
+    width: 150px;
+    background-color: rgb(40, 115, 214);
+}
+.submitButton:hover{
+    font-size: 30px;
+    width: 300px;
+    background-color: rgb(108, 147, 199);
+    color: white;
+    transition: ease 10ms;
 
+}
   @media screen and (max-width:768px){
+      .header{
+          height: 60px;
+          padding:5px;
+      }
+    .webName{
+        font-size: 25px;
+        position: relative;
+        top:4px;
+      }
    .flights {
-       font-size: 20px;
-       left:42%;
-       bottom:8px;      
+          position: relative;
+          top: 12px;
+          left:75px;
+          font-size: 18px;
+          margin-right: 5px;
    }
    .sights {
-    font-size: 20px;
-    left:45%;
-    top:-30px;      
-}
+    position: relative;
+    top: 12px;
+    left:80px;
+    font-size: 18px;
    }
+}
   
