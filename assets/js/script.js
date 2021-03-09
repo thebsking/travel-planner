@@ -7,13 +7,8 @@ $( function() {
   $( function() {
     $( "#datepicker2" ).datepicker();
   } );
-  $( function() {
-    $( "#depCity" ).selectmenu();
+  
  
-    $( "#arrCity" ).selectmenu();
- 
-   
-  } );
 
   //declare global vars
 let originCity;

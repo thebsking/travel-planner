@@ -1,9 +1,12 @@
+body{
+     background-color: darkgrey; 
+    
+}
 .header{
     background-color: darkgrey;
-    flex: wrap;
-    height:100px;
+    padding: 5px;
+    
 }
-
 .webName{
     
     position:relative;
@@ -16,7 +19,6 @@
 }
 .flights{
     float: left;
-    margin: 10px;
     position:relative;
     left: 50%;
     top:-35px;
@@ -32,10 +34,15 @@
     float: left;
     position:relative;
     left: 60%;
-    top: -25px;
+    top: -35px;
     font-family: 'Lobster', cursive;
     font-size: 30px;
     
+}
+.dateField{
+    font-family: "Lobster",cursive;
+    font-size: 20px;
+    padding:8px 0 8px 0;
 }
 .sights:hover{
     opacity: 80%;
@@ -45,23 +52,60 @@
 .flightHeader{
     font-family: "Lobster",cursive;
     font-size: 30px;
+    padding:8px 0 8px 0;
+     margin: 20px;
+
 }
+
 .weatherHeader{
-    
     font-family: "Lobster",cursive;
     font-size: 30px;
+    padding:8px 0 8px 0;
+    margin: 20px;
+}
+.depHeader{
+    font-family: "Lobster",cursive;
+    font-size: 25px;
+    margin: 5px;
     
+}
+.arrHeader{
+    font-family: "Lobster",cursive;
+    font-size: 25px;
+    margin: 5px;
+    
+}
+
+
+label{
+   
+    font-size:22px;
 }
 .flightPlanner{
     font-family: "Lobster",cursive;
-    font-size: 30px;
+    margin-left:0px;
+    position: relative;
+    left:20px;
 }
+
 .datePickers{
-    margin:20px;
+    margin:8px;
+    position: relative;
+    left: 150px;
+}
+.textField{
+    
+    margin: 5px;
+}
+.dateField input{
+    text-align: center;
 }
 
 fieldset {
     border: 0;
+    flex: wrap;
+    flex-direction: column;
+    margin-left: 20px;
   }
   label {
     display: block;
@@ -70,18 +114,48 @@ fieldset {
   .overflow {
     height: 200px;
   }
+.submitButton{
+    font-family: "lobster", cursive;
+    font-size: 30px;
+    width: 300px;
+    background-color: rgb(40, 115, 214);
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+.submitButton:hover{
+    font-size: 30px;
+    width: 350px;
+    background-color: rgb(108, 147, 199);
+    color: white;
+    transition: ease 10ms;
 
+}
   @media screen and (max-width:768px){
+
+    }
+      
+    .header{
+          height: 100px;
+          padding:5px;
+      }
+    .webName{
+        font-size: 35px;
+        position: relative;
+        top:4px;
+      }
    .flights {
-       font-size: 20px;
-       left:42%;
-       bottom:8px;      
+          position: relative;
+          top: 8px;
+          left:250px;
+          font-size: 25px;
+          margin-right: 5px;
    }
    .sights {
-    font-size: 20px;
-    left:45%;
-    top:-30px;      
-}
+    position: relative;
+    top: 8px;
+    left: 280px;
+    font-size: 25px;
    }
 
    button{
@@ -137,4 +211,40 @@ fieldset {
     margin-left:100px;
     font-size: larger;
 }
+
+Fieldset {
+    margin: 90px;
+}
+
+label{
+    font-size: 25px;
+}
+.flightHeader{
+    position: relative;
+    
+    margin: 15px 10px;
+}
+.flightPlanner{
+    font-family: "Lobster",cursive;
+    
+}
+.datePickers{
+    margin-bottom: 5px;
+    
+}
+
+.dateField{
+    position:relative;
+    left:-80px;
+}
+.textField{
+    
+    margin: 5px;
+}
+
+.submitButton{
+    position: relative;
+    left: -65px;
+}
+ 
   
