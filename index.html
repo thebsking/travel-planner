@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Plan your trip!</title>
@@ -25,43 +25,40 @@
         </div>
     </div>
     <!-- FlightPlanner -->
-<div class="flightPlanner">
-    <div class="flightHeader">Flight Planner</div>
-   <div class="departureCity">
-    <fieldset>
-        <label for="depCity">Pick a city to depart from</label>
-        <input id="depCity" type="text" autofocus="true" class="form-input" >
-    </fieldset>
-   </div>
-   <div class="arrivalCity">
-    <fieldset>
-        <label for="arrCity">Pick a destination</label>
-       <input id="arrCity" type="text" autofocus="true" class="form-input" >
-    </fieldset>
-   </div>
-</div>
+    <div class="flightPlanner">
+        <div class="flightHeader">Flight Planner</div>
+            <div class="cityPicker">
+                <div class="departureCity">
+                <fieldset >
+                    <label for="depCity">Pick a city to depart from</label>
+                    <input id="depCity" type="text" autofocus="true" class="form-input" >
+                </fieldset>
+                </div>
+                <div class="arrivalCity">
+                <fieldset>
+                    <label for="arrCity">Pick a destination</label>
+                    <input id="arrCity" type="text" autofocus="true" class="form-input" >
+                </fieldset>
+                </div>
+            </div>
+    </div>
         <!-- DatePickers -->
     <div class="datePickers">
         <div class="departureDate">
             <p class="depHeader">Departure Date</p>
-            <p class="dateField">Date: <input type="text" id="datepicker1"></p>
+            <p class="dateField"><input type="text" id="datepicker1"></p>
         </div>
         <div class="arrivalDate">
             <p class="arrHeader">Return Date</p>
-            <p class="dateField">Date: <input type="text" id="datepicker2"></p>
+            <p class="dateField"><input type="text" id="datepicker2"></p>
         </div>
         <div class="submit">
             <button class="submitButton">Find me a flight!</button>
         </div>
     </div>
 <div class="textField">
-    <p class="flightHeader">Flights</p>
-    <p id="flightDisplay"></p>
-</div>
-<div class="weatherContent">
-    <h2 class="weatherHeader">Weather Forecast</h2>
-    <p id="weatherDisplay"></p>
-</div>
+    <p class="flightHeader1">Flights</p>
+    <p id="flightDisplay">columbus,oh</p>
 </div>
 <!--City weather search-->
 <div class='container'>
@@ -100,13 +97,17 @@
     </div>
     <div class='row4'>
         <p class='UVindex'>UV Index:</p>
+    <div class="weatherContent">
+        <h2 class="weatherHeader">Weather Forecast</h2>
+        <p id="weatherDisplay"></p>
     </div>
-    
+    <div id="map" style="height:300px;width:500px"></div>
     
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
+    
 </body>
 </html>
