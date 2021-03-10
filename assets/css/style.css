@@ -158,19 +158,26 @@ fieldset {
     font-size: 25px;
    }
 
-   button{
-       width: 50px;
+   .searchBtn{
+       width: 100px;
        height: 30px;
        margin-top: -8px;
        margin-left: 10px;
+       background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg_qRnAGHixflpv9TmXp2BwGNqmmPpTR9AwA&usqp=CAU") ;
    }
-   button:hover {
-       background-color: rgb(35, 35, 221);
+   .searchBtn:hover {
+       color: rgb(0, 255, 13);
    }
 
-   button:focus {
+   .searchBtn:focus {
        border: none;
        outline-color: rgb(35, 35, 221);
+   }
+
+   .BtnName {
+       font-family: 'lobster' , cursive;
+       margin-top: -5px;
+       color: black;
    }
 
    .searchInput {
