@@ -25,38 +25,40 @@
         </div>
     </div>
     <!-- FlightPlanner -->
-<div class="flightPlanner">
-    <div class="flightHeader">Flight Planner</div>
-   <div class="departureCity">
-    <fieldset>
-        <label for="depCity">Pick a city to depart from</label>
-        <input id="depCity" type="text" autofocus="true" class="form-input" >
-    </fieldset>
-   </div>
-   <div class="arrivalCity">
-    <fieldset>
-        <label for="arrCity">Pick a destination</label>
-       <input id="arrCity" type="text" autofocus="true" class="form-input" >
-    </fieldset>
-   </div>
-</div>
+    <div class="flightPlanner">
+        <div class="flightHeader">Flight Planner</div>
+            <div class="cityPicker">
+                <div class="departureCity">
+                <fieldset >
+                    <label for="depCity">Pick a city to depart from</label>
+                    <input id="depCity" type="text" autofocus="true" class="form-input" >
+                </fieldset>
+                </div>
+                <div class="arrivalCity">
+                <fieldset>
+                    <label for="arrCity">Pick a destination</label>
+                    <input id="arrCity" type="text" autofocus="true" class="form-input" >
+                </fieldset>
+                </div>
+            </div>
+    </div>
         <!-- DatePickers -->
     <div class="datePickers">
         <div class="departureDate">
             <p class="depHeader">Departure Date</p>
-            <p class="dateField">Date: <input type="text" id="datepicker1"></p>
+            <p class="dateField"><input type="text" id="datepicker1"></p>
         </div>
         <div class="arrivalDate">
             <p class="arrHeader">Return Date</p>
-            <p class="dateField">Date: <input type="text" id="datepicker2"></p>
+            <p class="dateField"><input type="text" id="datepicker2"></p>
         </div>
         <div class="submit">
             <button class="submitButton">Find me a flight!</button>
         </div>
     </div>
 <div class="textField">
-    <p class="flightHeader">Flights</p>
-    <p id="flightDisplay"></p>
+    <p class="flightHeader1">Flights</p>
+    <p id="flightDisplay">columbus,oh</p>
 </div>
     <div class="weatherContent">
         <h2 class="weatherHeader">Weather Forecast</h2>
