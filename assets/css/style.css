@@ -226,9 +226,7 @@ margin-right: 10px;
        margin-left: 10px;
        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg_qRnAGHixflpv9TmXp2BwGNqmmPpTR9AwA&usqp=CAU") ;
    }
-   .searchBtn:hover {
-       color: rgb(0, 255, 13);
-   }
+
 
    .searchBtn:focus {
        border: none;
@@ -343,5 +341,5 @@ label{
     position: relative;
     left: -65px;
 }
+
 }
-  
