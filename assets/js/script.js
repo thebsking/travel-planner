@@ -75,7 +75,6 @@ function getFlights(origin, destination) {
       console.log(data)
       flightObject = data;
 
-<<<<<<< HEAD
       //render api response data to page
       let flightEL = $('#flightDisplay')
       flightEL.append(`Cheapest flight is: $${flightObject.Quotes[0].MinPrice}`)
@@ -88,10 +87,6 @@ function getFlights(origin, destination) {
     });
   mapsGeoCode();
 }
-=======
-
-//build maps api calls https://developers.google.com/maps/documentation/javascript/overview
->>>>>>> 65266a8b927773b24f2ced34885e05bf5a9e0c73
 
 //add click event for submission
 $('.submitButton').on('click', function () {
@@ -112,11 +107,8 @@ function mapsGeoCode() {
       document.head.appendChild(script);
     })
 
-<<<<<<< HEAD
 }
-=======
 //render api response data to page 
->>>>>>> 65266a8b927773b24f2ced34885e05bf5a9e0c73
 
 let map;
 let service;
