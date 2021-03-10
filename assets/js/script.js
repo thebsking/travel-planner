@@ -15,7 +15,7 @@ let originCity;
 let destinationCity;
 let flightObject;
 let googleCityCoords;
-const mapEl = document.getElementById('map')
+//const mapEl = document.getElementById('map')
 
 //build weather api calls https://rapidapi.com/skyscanner/api/skyscanner-flight-search/endpoints
 function getCities(origin, destination) {
@@ -100,20 +100,20 @@ function mapsGeoCode() {
     .then(data => {
       console.log(data)
       googleCityCoords = data.results[0].geometry.location;
-      
       const script = document.createElement('script');
-      script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDz091kyRUnde4u6imdbCufy_dba23YnPc&callback=initMap"
+      script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDz091kyRUnde4u6imdbCufy_dba23YnPc&libraries=places&callback=initMap"
       script.async = true;
-      let map;
-      function initMap() {
-        console.log(googleCityCoords);
-        map = new google.maps.Map(document.getElementById("map"), {
-          center: {lat: 41.8781136, lng: -87.6297982},
-          zoom: 10,
-        });
-      }
-      mapEl.appendChild(script);
+      
+      document.head.appendChild(script);
     })
 
 }
 
+let map;
+      function initMap() {
+        console.log(googleCityCoords);
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: googleCityCoords,
+          zoom: 8,
+        });
+      }
