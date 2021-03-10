@@ -31,7 +31,7 @@ body{
     float: left;
     position:relative;
     left: 50%;
-    top:-50px;
+    top:-10px;
     font-family: 'Lobster', cursive;
     font-size: 30px;
 }
@@ -44,7 +44,7 @@ body{
     float: left;
     position:relative;
     left: 60%;
-    top: -50px;
+    top: -10px;
     font-family: 'Lobster', cursive;
     font-size: 30px;
     
@@ -53,6 +53,7 @@ body{
     font-family: "Lobster",cursive;
     font-size: 20px;
     padding:8px 0 8px 0;
+    width: fit-content;
 }
 .sights:hover{
     opacity: 80%;
@@ -115,32 +116,31 @@ label {
     flex-direction: column;
     flex-shrink: 1;
     font-family: "Lobster",cursive;
-    margin-left:0px;
     position: relative;
     left:200px;
+    width: fit-content;
 }
 .cityPicker{
     display:flex;
     flex-direction: row;
     position:relative;
     left: -60px;
+    width: fit-content;
 }
 
 .datePickers{
     margin:5px;
     position: relative;
     left: 150px;
-    flex-direction: row;
+    width: fit-content;
+    
 }
 .arrivalDate{
-    position:relative;
-    top: -110px;
-    left:450px;
+    
 }
 .textField{
     display: flex;
     flex-flow: column wrap;
-    
     font-family: "lobster", cursive;
     margin: 30px 30px 10px 50px ;
     border: grey solid 5px;
@@ -163,12 +163,7 @@ label {
 
 }
 
-.dateField{
-    position:relative;
-    left:100px;
-    margin-right: 10px;
 
-}
 .weatherContent{
 
 }
@@ -176,7 +171,7 @@ label {
   
   .overflow {
     height: 200px;
-  }
+    
 .submitButton{
     font-family: "lobster", cursive;
     font-size: 30px;
@@ -236,7 +231,7 @@ label{
 .flightPlanner{
     font-family: "Lobster",cursive;
     display: flex;
-    flex:wrap;
+    
     flex-direction: column;
     font-size: 20px;
 
@@ -248,16 +243,13 @@ label{
     font-size: 15px;
 }
 .datePickers{
+    display: flex;
     margin-bottom: 5px;
     flex-direction: column;
     
 }
 
-.dateField{
-    
-    position:relative;
-    left:-80px;
-}
+
 .textField{
     display: flex;
     flex-shrink: 1;
