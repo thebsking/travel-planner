@@ -161,8 +161,8 @@ fieldset {
    button{
        width: 50px;
        height: 30px;
-       margin-top: 10px;
-       margin-left: 20px;
+       margin-top: -8px;
+       margin-left: 10px;
    }
    button:hover {
        background-color: rgb(35, 35, 221);
@@ -174,10 +174,15 @@ fieldset {
    }
 
    .searchInput {
-       width: 125px;
+       width: 170px;
        height: 30px;
-       margin-left: 50px;
-       margin-top: 10px;
+       margin-left: 35px;
+       margin-top: -8px;
+   }
+
+   .CitySearch {
+       margin-top: -12px;
+       font-family:'lobster', cursive;
    }
 
    .container {
@@ -189,28 +194,33 @@ fieldset {
    }
 
    .CityName {
-    margin-left: 100px;
+    margin-left: 125px;
     font-size: x-large ;
+    font-family: 'lobster', cursive;
 }
 
 .row1 {
     margin-left:100px;
-    font-size: larger;
+    font-size: x-large;
+    font-family: 'lobster', cursive;
 }
 
 .row2 {
     Margin-left: 100px;
-    font-size: larger;
+    font-size: x-large;
+    font-family: 'lobster', cursive;
 }
 
 .row3 {
     margin-left: 100px;
-    font-size: larger;
+    font-size: x-large;
+    font-family: 'lobster', cursive;
 }
 
 .row4 {
     margin-left:100px;
-    font-size: larger;
+    font-size: x-large;
+    font-family: 'lobster', cursive;
 }
 
 Fieldset {
