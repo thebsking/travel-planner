@@ -25,83 +25,45 @@
         </div>
     </div>
     <!-- FlightPlanner -->
-<div class="flightPlanner">
-    <div class="flightHeader">Flight Planner</div>
-   <div class="departureCity">
-    <fieldset>
-        <label for="depCity">Pick a city to depart from</label>
-        <input id="depCity" type="text" autofocus="true" class="form-input" >
-    </fieldset>
-   </div>
-   <div class="arrivalCity">
-    <fieldset>
-        <label for="arrCity">Pick a destination</label>
-       <input id="arrCity" type="text" autofocus="true" class="form-input" >
-    </fieldset>
-   </div>
-</div>
+    <div class="flightPlanner">
+        <div class="flightHeader">Flight Planner</div>
+            <div class="cityPicker">
+                <div class="departureCity">
+                <fieldset >
+                    <label for="depCity">Pick a city to depart from</label>
+                    <input id="depCity" type="text" autofocus="true" class="form-input" >
+                </fieldset>
+                </div>
+                <div class="arrivalCity">
+                <fieldset>
+                    <label for="arrCity">Pick a destination</label>
+                    <input id="arrCity" type="text" autofocus="true" class="form-input" >
+                </fieldset>
+                </div>
+            </div>
+    </div>
         <!-- DatePickers -->
     <div class="datePickers">
         <div class="departureDate">
             <p class="depHeader">Departure Date</p>
-            <p class="dateField">Date: <input type="text" id="datepicker1"></p>
+            <p class="dateField"><input type="text" id="datepicker1"></p>
         </div>
         <div class="arrivalDate">
             <p class="arrHeader">Return Date</p>
-            <p class="dateField">Date: <input type="text" id="datepicker2"></p>
+            <p class="dateField"><input type="text" id="datepicker2"></p>
         </div>
         <div class="submit">
             <button class="submitButton">Find me a flight!</button>
         </div>
     </div>
 <div class="textField">
-    <p class="flightHeader">Flights</p>
-    <p id="flightDisplay"></p>
+    <p class="flightHeader1">Flights</p>
+    <p id="flightDisplay">columbus,oh</p>
 </div>
-<div class="weatherContent">
-    <h2 class="weatherHeader">Weather Forecast</h2>
-    <p id="weatherDisplay"></p>
-</div>
-</div>
-<!--City weather search-->
-<div class='container'>
-    <div class='search'>
-    <div class='row'>
-<h2>Search For A City</h2>
-         <div class="row">
-<input type='text' class='searchInput' placeholder="City Name">
-<button type="submit" class="searchBtn">
-    <i class="fas fa-search"></i>
-</button>
-        </div>
-     </div>
+    <div class="weatherContent">
+        <h2 class="weatherHeader">Weather Forecast</h2>
+        <p id="weatherDisplay"></p>
     </div>
-</div>
-<!--History Section-->
-<div class='History'></div> 
-    <div class='Container2'>
-    <div class='Forecast'>
-    <div class='row'>
-    <h3 class='CityName'>City Name</h3>
-    <h3 class='currentdate'></h3>
-    <img class='WeatherIcon'></img>
-            </div>
-        </div>
-    </div>
-
-    <div class='row1'>
-        <p class='temp'>Temperature:</p>
-    </div>
-    <div class='row2'>
-        <p class='humidity'>Humidity:</p>
-    </div>
-    <div class='row3'>
-        <p class='windspeed'>Wind Speed:</p>
-    </div>
-    <div class='row4'>
-        <p class='UVindex'>UV Index</p>
-    </div>
-    
     
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
