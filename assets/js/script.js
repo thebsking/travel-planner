@@ -108,8 +108,8 @@ function mapsGeoCode() {
     })
 
 }
-//render api response data to page 
 
+//map initialization function
 let map;
 let service;
       function initMap() {
