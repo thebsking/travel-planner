@@ -21,7 +21,7 @@
         <!-- Nav Buttons -->
         <div class="headerNav">
                 <label class="flights">Flights</label>
-                <label class="sights">See What's Around!</label>
+                <label class="sights">Weather</label>
         </div>
     </div>
     <!-- FlightPlanner -->
@@ -30,35 +30,28 @@
    <div class="departureCity">
     <fieldset>
         <label for="depCity">Pick a city to depart from</label>
-        <select name="depCity" id="depCity">
-          <option>Slower</option>
-          <option>Slow</option>
-          <option selected="selected">Medium</option>
-          <option>Fast</option>
-          <option>Faster</option>
-        </select>
+        <input id="depCity" type="text" autofocus="true" class="form-input" >
     </fieldset>
    </div>
    <div class="arrivalCity">
     <fieldset>
         <label for="arrCity">Pick a destination</label>
-        <select name="arrCity" id="arrCity">
-          <option>Slower</option>
-          <option>Slow</option>
-          <option selected="selected">Medium</option>
-          <option>Fast</option>
-          <option>Faster</option>
-        </select>
+       <input id="arrCity" type="text" autofocus="true" class="form-input" >
     </fieldset>
    </div>
 </div>
         <!-- DatePickers -->
     <div class="datePickers">
         <div class="departureDate">
-            <p>Date: <input type="text" id="datepicker1"></p>
+            <p class="depHeader">Departure Date</p>
+            <p class="dateField">Date: <input type="text" id="datepicker1"></p>
         </div>
         <div class="arrivalDate">
-            <p>Date: <input type="text" id="datepicker2"></p>
+            <p class="arrHeader">Return Date</p>
+            <p class="dateField">Date: <input type="text" id="datepicker2"></p>
+        </div>
+        <div class="submit">
+            <button class="submitButton">Find me a flight!</button>
         </div>
     </div>
 <div class="textField">
@@ -108,6 +101,8 @@
     <div class='row4'>
         <p class='UVindex'>UV Index</p>
     </div>
+    
+    
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
