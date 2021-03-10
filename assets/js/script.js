@@ -110,10 +110,27 @@ function mapsGeoCode() {
 }
 
 let map;
+let service;
       function initMap() {
         console.log(googleCityCoords);
         map = new google.maps.Map(document.getElementById("map"), {
           center: googleCityCoords,
-          zoom: 8,
+          zoom: 15,
         });
+        let request ={
+          location: googleCityCoords,
+          radius: '500',
+          query: 'tourist_attraction'
+        };
+        service = new google.maps.places.PlacesService(map);
+        service.textSearch(request, callback)
+        function callback(results, status) {
+          if (status == google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+              var place = results[i];
+              console.log(place);
+            }
+          }
+        }
+        
       }
