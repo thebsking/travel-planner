@@ -15,7 +15,7 @@ let originCity;
 let destinationCity;
 let flightObject;
 let googleCityCoords;
-//const mapEl = document.getElementById('map')
+
 
 //build weather api calls https://rapidapi.com/skyscanner/api/skyscanner-flight-search/endpoints
 function getCities(origin, destination) {
@@ -61,8 +61,7 @@ function getCities(origin, destination) {
 function getFlights(origin, destination) {
   let leaveDate = new Date($('#datepicker1').val()).toISOString().split('T');
   let returnDate = new Date($('#datepicker2').val()).toISOString().split('T');
-  //dates currently not set to correct format
-  //maybe use moment.js? 
+
   fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/${origin}/${destination}/${leaveDate[0]}?inboundpartialdate=${returnDate[0]}`, {
     "method": "GET",
     "headers": {
@@ -103,7 +102,7 @@ function mapsGeoCode() {
       const script = document.createElement('script');
       script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDz091kyRUnde4u6imdbCufy_dba23YnPc&libraries=places&callback=initMap"
       script.async = true;
-      
+
       document.head.appendChild(script);
     })
 
@@ -112,26 +111,26 @@ function mapsGeoCode() {
 //map initialization function
 let map;
 let service;
-      function initMap() {
-        console.log(googleCityCoords);
-        map = new google.maps.Map(document.getElementById("map"), {
-          center: googleCityCoords,
-          zoom: 15,
-        });
-        let request ={
-          location: googleCityCoords,
-          radius: '500',
-          query: 'tourist_attraction'
-        };
-        service = new google.maps.places.PlacesService(map);
-        service.textSearch(request, callback)
-        function callback(results, status) {
-          if (status == google.maps.places.PlacesServiceStatus.OK) {
-            for (var i = 0; i < 5; i++) {
-              var place = results[i];
-              console.log(place);
-            }
-          }
-        }
-        
+function initMap() {
+  console.log(googleCityCoords);
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: googleCityCoords,
+    zoom: 15,
+  });
+  let request = {
+    location: googleCityCoords,
+    radius: '500',
+    query: 'tourist_attraction'
+  };
+  service = new google.maps.places.PlacesService(map);
+  service.textSearch(request, callback)
+  function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      for (var i = 0; i < 5; i++) {
+        var place = results[i];
+        console.log(place);
       }
+    }
+  }
+
+}
