@@ -120,15 +120,24 @@ function initMap() {
   let request = {
     location: googleCityCoords,
     radius: '500',
-    query: 'tourist_attraction'
+    query: 'tourist_attraction',
+    price_level: '0'
   };
   service = new google.maps.places.PlacesService(map);
   service.textSearch(request, callback)
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
+      //create ul for attractions
+      const attractionList = document.createElement('ul')
+      attractionList.setAttribute('id', 'attraction-list')
+      document.body.appendChild(attractionList)
+      //append attractions to ul
       for (var i = 0; i < 5; i++) {
         var place = results[i];
         console.log(place);
+        let listItem = document.createElement('li')
+        listItem.textContent = place.name
+        attractionList.appendChild(listItem);
       }
     }
   }
