@@ -136,9 +136,7 @@ label {
     width: fit-content;
     
 }
-.arrivalDate{
-    
-}
+
 .textField{
     display: flex;
     flex-flow: column wrap;
@@ -165,9 +163,7 @@ label {
 }
 
 
-.weatherContent{
 
-}
 
   
   .overflow {
@@ -191,9 +187,7 @@ label {
 
 }
   @media screen and (max-width:900px){
-    *{
-        
-    }
+   
       
     .header{
           height: 100px;
@@ -288,6 +282,15 @@ label {
     font-family: 'lobster', cursive;
 }
 
+.box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(70, 150, 182) ;
+    border-radius: 50%;
+    border: 10px solid #fff;
+}
+
 Fieldset {
     margin: 90px;
 }
@@ -300,9 +303,7 @@ label{
     left:-100px;
     margin: 15px 10px;
 }
-.textField{
-    
-}
+
 .flightPlanner{
     font-family: "Lobster",cursive;
     display: flex;
@@ -330,9 +331,7 @@ label{
     flex-shrink: 1;
     margin: 5px;
 }
-.weatherContent{
-    
-}
+
 .submitButton{
     position: relative;
     left: -65px;
