@@ -69,24 +69,24 @@ function getCities(origin, destination) {
 
 };
 function getFlights(origin, destination) {
-  if ($('#datepicker1').val() < Date) {
+
+  
+  let leaveDate = new Date($('#datepicker1').val()).toISOString().split('T');
+  let returnDate = new Date($('#datepicker2').val()).toISOString().split('T');
+  if (leaveDate[0] < Date.now()) {
     let pastAlert = document.createElement('div')
     pastAlert.setAttribute('role', 'alert')
     pastAlert.classList.add('alert', 'alert-danger')
     pastAlert.textContent = 'You cannot travel to the past, please try again'
     $('.departureDate').append(pastAlert)
   }
-  if ($('#datepicker2').val() < Date) {
+  if (returnDate[0] < Date.now()) {
     let pastAlert = document.createElement('div')
     pastAlert.setAttribute('role', 'alert')
     pastAlert.classList.add('alert', 'alert-danger')
     pastAlert.textContent = 'You cannot travel to the past, please try again'
     $('.arrivalDate').append(pastAlert)
   }
-  
-  let leaveDate = new Date($('#datepicker1').val()).toISOString().split('T');
-  let returnDate = new Date($('#datepicker2').val()).toISOString().split('T');
-
   fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/${origin}/${destination}/${leaveDate[0]}?inboundpartialdate=${returnDate[0]}`, {
     "method": "GET",
     "headers": {
@@ -165,7 +165,7 @@ function initMap() {
       const attractionList = document.createElement('ul')
       attractionList.setAttribute('id', 'attraction-list')
       attractionList.textContent = 'Top 5 free things to see'
-      document.body.appendChild(attractionList)
+      $('.flightPlanner').append(attractionList)
       
       //append attractions to ul
       for (var i = 0; i < 5; i++) {
