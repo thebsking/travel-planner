@@ -262,6 +262,19 @@ border-radius: 15px;
     border: 10px solid #fff;
     margin: -170px 0px 0px 1000px
 }
+
+.plane {
+    position:absolute;
+    width: 200px;
+    height: 200px;
+    margin: -5px 0px 0px 980px
+}
+
+.globe {
+    width:200px;
+    height: 150px;
+    margin: -150px 0px 0px 1000px
+}
  
 
 
