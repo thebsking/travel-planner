@@ -64,18 +64,24 @@ body{
 .flightHeader{
     font-family: "Lobster",cursive;
     font-size: 30px;
-    padding:8px 0 8px 0;
-     margin: 20px;
+    padding-left:10px;
+    margin: 20px;
+    position:relative;
+    left: -20px;
+    top: -20px;
+    background-color: grey;
+    height: fit-content;
+    width: 250px;
+
+
 
 }
 .flightHeader1{
 position: relative;
 top: -45px;
-width: 100px;
 text-align: center;
 background-color:white;
 margin: 15px 10px;
-left: 190px;
 font-size: 30px;
 font-family: "lobster", cursive;
 border: grey solid 5px;
@@ -89,12 +95,24 @@ border-radius: 15px;
     padding:8px 0 8px 0;
     margin: 20px;
 }
-.depHeader{
-    font-family: "Lobster",cursive;
-    font-size: 25px;
-    margin: 5px;
+
+.departureCity, .arrivalCity{
+    text-align: center;
+    margin: 20px;
+    font-size: 150%;
     
+
+}   
+
+.departureCity fieldset input{
+    margin: 5px;
+    width: 90%;
 }
+.arrivalCity fieldset input{
+    margin: 5px;
+    width: 90%;
+}
+
 .arrHeader{
     font-family: "Lobster",cursive;
     font-size: 25px;
@@ -105,23 +123,48 @@ border-radius: 15px;
 
 .flightPlanner{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-shrink: 1;
     font-family: "Lobster",cursive;
     position: relative;
-    left:200px;
-    width: fit-content;
+    border: grey 15px solid;
+    flex-direction: row;
+    height: 60%;
+
+    
+
 }
+
 .cityPicker{
-    display:flex;
+    
+    flex-flow: column;
+    
+    border: grey 5px solid;
+    
+}
+
+
+.mapHeader{
     flex-direction: column;
+    background-color: grey;
+    font-size: 20px;
+    padding: 10px;
+    height: fit-content;
     position: relative;
-    top: 160px;
-    left: -320px;
-    width: fit-content;
+    left: 80px;
+    top: 10px;
+   
+    
 }
 #map {
+    margin: 10px;
     float: right;
+    position: relative;
+    min-width: 375px;
+    min-height: 400px;
+    width: 45%;
+    padding: 15px;
+    border: grey solid 15px;
     
     
     
@@ -142,7 +185,7 @@ border-radius: 15px;
     margin: 30px 30px 10px 50px ;
     border: grey solid 5px;
     border-radius: 15px;
-    max-width: 600px;
+    
     min-width: 400px;
     text-align: center;
     height: 500px;
@@ -387,31 +430,32 @@ border-radius: 15px;
 
 
 Fieldset {
-    margin: 90px;
+    margin: 10px;
 }
 
-label{
-    font-size: 25px;
-}
+
 .flightHeader{
     position: relative;
     left:-100px;
+    
     margin: 15px 10px;
 }
 
 .flightPlanner{
     font-family: "Lobster",cursive;
     display: flex;
+    flex: wrap;
+    padding: 5px;
     
-    flex-direction: column;
+    flex-direction:column;
     font-size: 20px;
 
 }
 .cityPicker{
+    text-align: center;
     flex-flow: column wrap;
     position: relative;
-    left: -150px;
-    font-size: 15px;
+    
 }
 .datePickers{
     display: flex;

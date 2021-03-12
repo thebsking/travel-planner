@@ -11,11 +11,13 @@ $(function () {
 
 
 //declare global vars
+const departureCity = $('.depCity')
+const arrivalCity = $('.arrCity')
 let originCity;
 let destinationCity;
 let flightObject;
 let googleCityCoords;
-//const mapEl = document.getElementById('map')
+
 
 //build weather api calls https://rapidapi.com/skyscanner/api/skyscanner-flight-search/endpoints
 function getCities(origin, destination) {
@@ -44,14 +46,22 @@ function getCities(origin, destination) {
           destinationCity = data.Places[0].PlaceId;
           console.log(destinationCity)
           getFlights(originCity, destinationCity)
-          return destinationCity
         })
         .catch(err => {
           console.error(err);
+          const cityAlert = document.createElement('div')
+          cityAlert.classList.add('alert', 'alert-danger')
+          cityAlert.textContent = 'Check your city name and try again'
+          $('.cityPicker').append(cityAlert)
         });
     })
     .catch(err => {
+      
       console.error(err);
+      const cityAlert = document.createElement('div')
+      cityAlert.classList.add('alert', 'alert-danger')
+      cityAlert.textContent = 'Check your city name and try again'
+      $('.cityPicker').append(cityAlert)
     });
 
 
@@ -59,10 +69,24 @@ function getCities(origin, destination) {
 
 };
 function getFlights(origin, destination) {
+
+  
   let leaveDate = new Date($('#datepicker1').val()).toISOString().split('T');
   let returnDate = new Date($('#datepicker2').val()).toISOString().split('T');
-  //dates currently not set to correct format
-  //maybe use moment.js? 
+  if (leaveDate[0] < Date.now()) {
+    let pastAlert = document.createElement('div')
+    pastAlert.setAttribute('role', 'alert')
+    pastAlert.classList.add('alert', 'alert-danger')
+    pastAlert.textContent = 'You cannot travel to the past, please try again'
+    $('.departureDate').append(pastAlert)
+  }
+  if (returnDate[0] < Date.now()) {
+    let pastAlert = document.createElement('div')
+    pastAlert.setAttribute('role', 'alert')
+    pastAlert.classList.add('alert', 'alert-danger')
+    pastAlert.textContent = 'You cannot travel to the past, please try again'
+    $('.arrivalDate').append(pastAlert)
+  }
   fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/${origin}/${destination}/${leaveDate[0]}?inboundpartialdate=${returnDate[0]}`, {
     "method": "GET",
     "headers": {
@@ -76,11 +100,17 @@ function getFlights(origin, destination) {
       flightObject = data;
 
       //render api response data to page
-      let flightEL = $('#flightDisplay')
+      const flightEL = document.createElement('h3')
+      flightEL.setAttribute('id', 'flightDisplay')
+      document.querySelector('.textField').appendChild(flightEL)
       flightEL.append(`Cheapest flight is: $${flightObject.Quotes[0].MinPrice}`)
-      secondFlight = flightEL.append('<p>')
-      secondFlight.append(`other options start at: $${flightObject.Quotes[1].MinPrice}`)
-
+      const secondFlight = document.createElement('h3')
+        document.querySelector('.textField').appendChild(secondFlight)
+      if (flightObject.Quotes.length > 1){
+        secondFlight.append(`other options start at: $${flightObject.Quotes[1].MinPrice}`)
+      } else { 
+        secondFlight.append('no other flights found')
+      }
     })
     .catch(err => {
       console.error(err);
@@ -89,6 +119,7 @@ function getFlights(origin, destination) {
 }
 
 //add click event for submission
+
 $('.submitButton').on('click', function () {
   getCities($('#depCity').val(), $('#arrCity').val());
 })
@@ -103,7 +134,7 @@ function mapsGeoCode() {
       const script = document.createElement('script');
       script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDz091kyRUnde4u6imdbCufy_dba23YnPc&libraries=places&callback=initMap"
       script.async = true;
-      
+
       document.head.appendChild(script);
     })
 
@@ -112,28 +143,39 @@ function mapsGeoCode() {
 //map initialization function
 let map;
 let service;
-      function initMap() {
-        console.log(googleCityCoords);
-        map = new google.maps.Map(document.getElementById("map"), {
-          center: googleCityCoords,
-          zoom: 15,
-        });
-        let request ={
-          location: googleCityCoords,
-          radius: '500',
-          query: 'tourist_attraction'
-        };
-        service = new google.maps.places.PlacesService(map);
-        service.textSearch(request, callback)
-        function callback(results, status) {
-          if (status == google.maps.places.PlacesServiceStatus.OK) {
-            for (var i = 0; i < 5; i++) {
-              var place = results[i];
-              console.log(place);
-            }
-          }
-        }
-        
+function initMap() {
+  console.log(googleCityCoords);
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: googleCityCoords,
+    zoom: 15,
+  });
+  let request = {
+    location: googleCityCoords,
+    radius: '500',
+    query: 'tourist_attraction',
+    price_level: '0'
+  };
+  service = new google.maps.places.PlacesService(map);
+  service.textSearch(request, callback)
+  function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      
+      
+      //create ul for attractions
+      const attractionList = document.createElement('ul')
+      attractionList.setAttribute('id', 'attraction-list')
+      attractionList.textContent = 'Top 5 free things to see'
+      $('.flightPlanner').append(attractionList)
+      
+      //append attractions to ul
+      for (var i = 0; i < 5; i++) {
+        var place = results[i];
+        console.log(place);
+        let listItem = document.createElement('li')
+        listItem.textContent = place.name
+        attractionList.appendChild(listItem);
       }
+    }
+  }
 
-     
+}
