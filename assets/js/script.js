@@ -16,7 +16,10 @@ const arrivalCity = $('.arrCity')
 let originCity;
 let destinationCity;
 let flightObject;
-let googleCityCoords;
+let googleCityCoords = {
+  "lat": 39.9611755,
+  "lng": -82.99879419999999
+};
 
 
 //build weather api calls https://rapidapi.com/skyscanner/api/skyscanner-flight-search/endpoints
@@ -100,11 +103,12 @@ function getFlights(origin, destination) {
       flightObject = data;
 
       //render api response data to page
-      const flightEL = document.createElement('h3')
-      flightEL.setAttribute('id', 'flightDisplay')
+      const flightEL = document.createElement('a')
+      flightEL.classList.add('flightDisplay')
       document.querySelector('.textField').appendChild(flightEL)
       flightEL.append(`Cheapest flight is: $${flightObject.Quotes[0].MinPrice}`)
-      const secondFlight = document.createElement('h3')
+      const secondFlight = document.createElement('a')
+        secondFlight.classList.add('flightDisplay')
         document.querySelector('.textField').appendChild(secondFlight)
       if (flightObject.Quotes.length > 1){
         secondFlight.append(`other options start at: $${flightObject.Quotes[1].MinPrice}`)
