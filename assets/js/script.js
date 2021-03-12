@@ -75,11 +75,17 @@ function getFlights(origin, destination) {
       flightObject = data;
 
       //render api response data to page
-      let flightEL = $('#flightDisplay')
+      const flightEL = document.createElement('h3')
+      flightEL.setAttribute('id', 'flightDisplay')
+      document.querySelector('.textField').appendChild(flightEL)
       flightEL.append(`Cheapest flight is: $${flightObject.Quotes[0].MinPrice}`)
-      secondFlight = flightEL.append('<p>')
-      secondFlight.append(`other options start at: $${flightObject.Quotes[1].MinPrice}`)
-
+      const secondFlight = document.createElement('h3')
+        document.querySelector('.textField').appendChild(secondFlight)
+      if (flightObject.Quotes.length > 1){
+        secondFlight.append(`other options start at: $${flightObject.Quotes[1].MinPrice}`)
+      } else { 
+        secondFlight.append('no other flights found')
+      }
     })
     .catch(err => {
       console.error(err);
