@@ -185,72 +185,43 @@ border-radius: 15px;
 
 }
 
+.searchBtn{
+    width: 100px;
+    height: 30px;
+    margin-top: -8px;
+    margin-left: 10px;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg_qRnAGHixflpv9TmXp2BwGNqmmPpTR9AwA&usqp=CAU")
+}
 
-  @media screen and (max-width:900px){
-   
-      
-    .header{
-          height: 100px;
-          padding:5px;
-      }
-    .webName{
-        font-size: 35px;
-        position: relative;
-        top:4px;
-      }
-   .flights {
-          position: relative;
-          top:-18px;
-          left:250px;
-          font-size: 25px;
-          margin-right: 5px;
-   }
-   .sights {
-    position: relative;
-    top: -18px;
-    left: 250px;
-    font-size: 25px;
-   }
+.searchBtn:focus {
+    border: none;
+    outline-color: rgb(35, 35, 221);
+}
 
-   .searchBtn{
-       width: 100px;
-       height: 30px;
-       margin-top: -8px;
-       margin-left: 10px;
-       background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg_qRnAGHixflpv9TmXp2BwGNqmmPpTR9AwA&usqp=CAU") ;
-   }
+.BtnName {
+    font-family: 'lobster' , cursive;
+    margin-top: -5px;
+    color: black;
+}
 
+.searchInput {
+    width: 170px;
+    height: 20px;
+}
 
-   .searchBtn:focus {
-       border: none;
-       outline-color: rgb(35, 35, 221);
-   }
+.CitySearch {
+    margin-top: -12px;
+    font-family:'lobster', cursive;
+}
 
-   .BtnName {
-       font-family: 'lobster' , cursive;
-       margin-top: -5px;
-       color: black;
-   }
-
-   .searchInput {
-       width: 170px;
-       height: 30px;
-       margin-left: 35px;
-       margin-top: -8px;
-   }
-
-   .CitySearch {
-       margin-top: -12px;
-       font-family:'lobster', cursive;
-   }
-
-   .container {
+.container {
     display: flex;
     flex-direction: row;
     max-width: 640px;
     height: 100%;
     Margin: -50px 400px 0px 400px; 
-   }
+    
+   } 
 
    .CityName {
     margin-left: 125px;
@@ -283,13 +254,123 @@ border-radius: 15px;
 }
 
 .box {
-    position: relative;
+    position:'relative';
     width: 200px;
     height: 200px;
     background-color: rgb(70, 150, 182) ;
     border-radius: 50%;
-    border: 10px solid #fff;
+    border: 10px, 'solid' #fff;
 }
+ 
+
+
+
+
+  @media screen and (max-width:900px){
+   
+      
+    .header{
+          height: 100px;
+          padding:5px;
+      }
+    .webName{
+        font-size: 35px;
+        position: relative;
+        top:4px;
+      }
+   .flights {
+          position: relative;
+          top:-18px;
+          left:250px;
+          font-size: 25px;
+          margin-right: 5px;
+   }
+   .sights {
+    position: relative;
+    top: -18px;
+    left: 250px;
+    font-size: 25px;
+   }
+   
+   /* .box {
+    position:'relative';
+    width: 200px;
+    height: 200px;
+    background-color: rgb(70, 150, 182) ;
+    border-radius: 50%;
+    border: 10px, 'solid' #fff;
+} */
+
+   /* .searchBtn{
+       width: 100px;
+       height: 30px;
+       margin-top: -8px;
+       margin-left: 10px;
+       background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg_qRnAGHixflpv9TmXp2BwGNqmmPpTR9AwA&usqp=CAU")
+   } */
+
+
+   /* .searchBtn:focus {
+       border: none;
+       outline-color: rgb(35, 35, 221);
+   } */
+
+   /* .BtnName {
+       font-family: 'lobster' , cursive;
+       margin-top: -5px;
+       color: black;
+   } */
+
+   /* .searchInput {
+       width: 170px;
+       height: 20px;
+   } */
+
+   /* .CitySearch {
+       margin-top: -12px;
+       font-family:'lobster', cursive;
+   } */
+
+   /* .container {
+    display: flex;
+    flex-direction: row;
+    max-width: 640px;
+    height: 100%;
+    Margin: -50px 400px 0px 400px; 
+    
+   } */
+
+    /* .CityName {
+    margin-left: 125px;
+    font-size: x-large ;
+    font-family: 'lobster', cursive;
+} */
+
+/* .row1 {
+    margin-left:100px;
+    font-size: x-large;
+    font-family: 'lobster', cursive;
+}
+
+.row2 {
+    Margin-left: 100px;
+    font-size: x-large;
+    font-family: 'lobster', cursive;
+}
+
+.row3 {
+    margin-left: 100px;
+    font-size: x-large;
+    font-family: 'lobster', cursive;
+}
+
+.row4 {
+    margin-left:100px;
+    font-size: x-large;
+    font-family: 'lobster', cursive;
+}
+ */
+
 
 Fieldset {
     margin: 90px;
