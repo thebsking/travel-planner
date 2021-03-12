@@ -254,12 +254,13 @@ border-radius: 15px;
 }
 
 .box {
-    position:'relative';
+    position:fixed right;
     width: 200px;
-    height: 200px;
+    height: 150px;
     background-color: rgb(70, 150, 182) ;
     border-radius: 50%;
-    border: 10px, 'solid' #fff;
+    border: 10px solid #fff;
+    margin: -170px 0px 0px 1000px
 }
  
 
