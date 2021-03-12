@@ -11,6 +11,8 @@ $(function () {
 
 
 //declare global vars
+const departureCity = $('.depCity')
+const arrivalCity = $('.arrCity')
 let originCity;
 let destinationCity;
 let flightObject;
@@ -44,14 +46,16 @@ function getCities(origin, destination) {
           destinationCity = data.Places[0].PlaceId;
           console.log(destinationCity)
           getFlights(originCity, destinationCity)
-          return destinationCity
         })
         .catch(err => {
           console.error(err);
+        
         });
     })
     .catch(err => {
+      
       console.error(err);
+    
     });
 
 
@@ -59,6 +63,21 @@ function getCities(origin, destination) {
 
 };
 function getFlights(origin, destination) {
+  if ($('#datepicker1').val() < Date) {
+    let pastAlert = document.createElement('div')
+    pastAlert.setAttribute('role', 'alert')
+    pastAlert.classList.add('alert', 'alert-danger')
+    pastAlert.textContent = 'You cannot travel to the past, please try again'
+    $('.departureDate').append(pastAlert)
+  }
+  if ($('#datepicker2').val() < Date) {
+    let pastAlert = document.createElement('div')
+    pastAlert.setAttribute('role', 'alert')
+    pastAlert.classList.add('alert', 'alert-danger')
+    pastAlert.textContent = 'You cannot travel to the past, please try again'
+    $('.arrivalDate').append(pastAlert)
+  }
+  
   let leaveDate = new Date($('#datepicker1').val()).toISOString().split('T');
   let returnDate = new Date($('#datepicker2').val()).toISOString().split('T');
 
@@ -94,6 +113,7 @@ function getFlights(origin, destination) {
 }
 
 //add click event for submission
+
 $('.submitButton').on('click', function () {
   getCities($('#depCity').val(), $('#arrCity').val());
 })
@@ -133,10 +153,14 @@ function initMap() {
   service.textSearch(request, callback)
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
+      
+      
       //create ul for attractions
       const attractionList = document.createElement('ul')
       attractionList.setAttribute('id', 'attraction-list')
+      attractionList.textContent = 'Top 5 free things to see'
       document.body.appendChild(attractionList)
+      
       //append attractions to ul
       for (var i = 0; i < 5; i++) {
         var place = results[i];
