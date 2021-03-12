@@ -49,13 +49,19 @@ function getCities(origin, destination) {
         })
         .catch(err => {
           console.error(err);
-        
+          const cityAlert = document.createElement('div')
+          cityAlert.classList.add('alert', 'alert-danger')
+          cityAlert.textContent = 'Check your city name and try again'
+          $('.cityPicker').append(cityAlert)
         });
     })
     .catch(err => {
       
       console.error(err);
-    
+      const cityAlert = document.createElement('div')
+      cityAlert.classList.add('alert', 'alert-danger')
+      cityAlert.textContent = 'Check your city name and try again'
+      $('.cityPicker').append(cityAlert)
     });
 
 
