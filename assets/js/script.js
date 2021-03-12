@@ -35,7 +35,7 @@ function getCities(origin, destination) {
     .then(response => response.json())
     .then(data => {
       originCity = data.Places[0].PlaceId;
-      console.log(originCity)
+      
       //destination city
       fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/US/USD/en-US/?query=${destination}`, {
         "method": "GET",
@@ -47,7 +47,7 @@ function getCities(origin, destination) {
         .then(response => response.json())
         .then(data => {
           destinationCity = data.Places[0].PlaceId;
-          console.log(destinationCity)
+          
           getFlights(originCity, destinationCity)
         })
         .catch(err => {
@@ -99,13 +99,16 @@ function getFlights(origin, destination) {
   })
     .then(response => response.json())
     .then(data => {
-      console.log(data)
+      
       flightObject = data;
 
       //render api response data to page
       const flightEL = document.createElement('a')
       flightEL.classList.add('flightDisplay')
       document.querySelector('.textField').appendChild(flightEL)
+      if (flightObject.Quotes.length == 0){
+        flightEL.append('Sorry, no flights found')
+      }
       flightEL.append(`Cheapest flight is: $${flightObject.Quotes[0].MinPrice}`)
       const secondFlight = document.createElement('a')
         secondFlight.classList.add('flightDisplay')
@@ -125,6 +128,15 @@ function getFlights(origin, destination) {
 //add click event for submission
 
 $('.submitButton').on('click', function () {
+  if(document.querySelector('.flightDisplay')) {
+    let flightList = document.querySelectorAll('.flightDisplay');
+    for (var i =0; i < flightList.length; i++){
+      flightList[i].remove();
+    }
+  }
+  if(document.querySelector('#attraction-list')){
+    document.querySelector('#attraction-list').innerHTML = '';
+  }
   getCities($('#depCity').val(), $('#arrCity').val());
 })
 
@@ -133,7 +145,7 @@ function mapsGeoCode() {
   fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${$('#arrCity').val()}&key=AIzaSyCXR3B8D3lybOR4VE3nXoUDrf7V8-NTiB8`)
     .then(response => response.json())
     .then(data => {
-      console.log(data)
+      
       googleCityCoords = data.results[0].geometry.location;
       const script = document.createElement('script');
       script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDz091kyRUnde4u6imdbCufy_dba23YnPc&libraries=places&callback=initMap"
@@ -148,7 +160,7 @@ function mapsGeoCode() {
 let map;
 let service;
 function initMap() {
-  console.log(googleCityCoords);
+  
   map = new google.maps.Map(document.getElementById("map"), {
     center: googleCityCoords,
     zoom: 15,
@@ -174,7 +186,7 @@ function initMap() {
       //append attractions to ul
       for (var i = 0; i < 5; i++) {
         var place = results[i];
-        console.log(place);
+       
         let listItem = document.createElement('li')
         listItem.textContent = place.name
         attractionList.appendChild(listItem);
