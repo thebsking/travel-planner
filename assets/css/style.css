@@ -270,6 +270,27 @@ border-radius: 15px;
     
    } 
 
+   .box2 {
+    position:fixed right;
+    width: 200px;
+    height: 150px;
+    background-color: rgb(112, 207, 245) ;
+    border-radius: 50%;
+    margin: -100px 0px 0px 1000px
+   }
+
+   .sun {
+    width:200px;
+    height: 150px;
+    margin: -170px 0px 0px 1020px
+   }
+
+   .cloud {
+    width:200px;
+    height: 150px;
+    margin: -100px 0px 0px 980px
+   }
+
    .CityName {
     margin-left: 125px;
     font-size: x-large ;
