@@ -196,7 +196,7 @@ border-radius: 15px;
     flex-direction: column;
     height: fit-content;
     padding: 5px;
-   background-color: tomato;
+   background-color: paleturquoise;
    border: grey solid 5px;
    border-radius: 15px;
     margin: 5px;
@@ -223,7 +223,7 @@ border-radius: 15px;
 .submitButton:hover{
     font-size: 30px;
     width: 350px;
-    background-color: rgb(108, 147, 199);
+    background-color: rgb(22, 76, 146);
     color: white;
     transition: ease 10ms;
 
@@ -256,17 +256,21 @@ border-radius: 15px;
 }
 
 .CitySearch {
-    margin-top: 40px;
+    position: relative;
+    left: 5%;
     font-family:'lobster', cursive;
-    margin-left: -10px;
 }
 
 .container {
     display: flex;
-    flex-direction: row;
-    max-width: 640px;
-    height: 100%;
-    Margin: -50px 400px 0px 400px; 
+    
+    margin: 5px;
+    padding: 5px;;
+    border: 5px solid grey;
+    border-radius:15px ;
+    position: relative;
+    left: 13%;
+    
     
    } 
 
@@ -321,7 +325,7 @@ border-radius: 15px;
     font-family: 'lobster', cursive;
 }
 
-.box {
+/* .box {
     position:fixed right;
     width: 200px;
     height: 150px;
@@ -342,13 +346,13 @@ border-radius: 15px;
     width:200px;
     height: 150px;
     margin: -150px 0px 0px 1000px
-}
+} */
  
 
 
 
 
-  @media screen and (max-width:900px){
+  @media screen and (max-width:1056px){
    
       
     .header{
@@ -372,6 +376,14 @@ border-radius: 15px;
     top: -18px;
     left: 250px;
     font-size: 25px;
+   }
+   .mapHeader{
+       position: relative;
+       top: 5px;
+       left: -2px;
+       text-align: center;
+       font-size: 30px;
+       
    }
    
    /* .box {
@@ -452,7 +464,10 @@ border-radius: 15px;
     font-family: 'lobster', cursive;
 }
  */
-
+#map{
+    
+    
+}
 
 Fieldset {
     margin: 10px;
@@ -499,7 +514,9 @@ Fieldset {
 
 .submitButton{
     position: relative;
-    left: -65px;
+    left: -2px;
 }
-
+.container{
+    position: relative;
+    left: -2px
 }
