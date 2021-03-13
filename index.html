@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+        integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Plan your trip!</title>
 </head>
+
 <body>
     <!-- Header -->
     <div class="header">
@@ -20,82 +25,90 @@
         </div>
         <!-- Nav Buttons -->
         <div class="headerNav">
-                <label class="flights">Flights</label>
-                <label class="sights">Weather</label>
+            <label class="flights">Flights</label>
+            <label class="sights">Weather</label>
         </div>
     </div>
-    <div class= "box"></div>
+    <div class="box"></div>
     <img class='globe' src='projectimages/earth-globe.png'>
     <img class='plane' src='projectimages/airplane.png'>
-    
+
 
     <!-- FlightPlanner -->
     <div class="flightPlanner">
         <div class="flightHeader">Flight Planner</div>
-            <div class="cityPicker">
-                <div class="departureCity">
-                <fieldset >
+        <div class="cityPicker">
+            <div class="departureCity">
+                <fieldset>
                     <label for="depCity">Pick a city to depart from</label>
-                    <input id="depCity" type="text" autofocus="true" class="form-input" >
+                    <input id="depCity" type="text" autofocus="true" class="form-input">
                 </fieldset>
-                </div>
-                <div class="arrivalCity">
+            </div>
+            <div class="arrivalCity">
                 <fieldset>
                     <label for="arrCity">Pick a destination</label>
-                    <input id="arrCity" type="text" autofocus="true" class="form-input" >
+                    <input id="arrCity" type="text" autofocus="true" class="form-input">
+                    <label for="departureDate">Departure Date</label>
+                    <input type="text" id="datepicker1">
+                    <label for="arrivalDate">Return Date</label>
+                    <input type="text" id="datepicker2">
+                    <button type="submit" class="submitButton">Search!</button>
                 </fieldset>
-                </div> 
-                 
-                
+                <!-- DatePickers -->
+                <!-- <div class="datePickers">
+                    <div class="departureDate">
+                        <p class="depHeader">Departure Date</p>
+                        <input type="text" id="datepicker1">
+                    </div>
+                    <div class="arrivalDate">
+                        <p class="arrHeader">Return Date</p>
+                        <input type="text" id="datepicker2">
+                    </div>
+                    <div class="submit">
+                        <button class="submitButton">Find me a flight!</button>
+                    </div>
+                </div> -->
             </div>
-            <!-- Google Map -->
-                <div class="mapHeader">Map</div>
-            <div id="map" >
-                <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz091kyRUnde4u6imdbCufy_dba23YnPc&callback=initMap">
-</script>
+
+
+        </div>
+        <!-- Google Map -->
+        <div class="mapHeader">Map</div>
+        <div id="map">
+            <script async
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz091kyRUnde4u6imdbCufy_dba23YnPc&callback=initMap">
+                </script>
+        </div>
+
+    </div>
+
+    <div class="textField">
+        <p class="flightHeader1">Flights</p>
+
+    </div>
+    <!--City weather search-->
+    <div class='container'>
+        <div class='search'>
+            <div class='row'>
+                <h2 class="CitySearch">Search For A City</h2>
+                <div class="row">
+                    <input type='text' class='searchInput' placeholder="City Name">
+                    <button type="submit" class="searchBtn">
+                        <h3 class='BtnName'>Search</h3>
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
             </div>
-    </div>
-        <!-- DatePickers -->
-    <div class="datePickers">
-        <div class="departureDate">
-            <p class="depHeader">Departure Date</p>
-            <p class="dateField"><input type="text" id="datepicker1"></p>
-        </div>
-        <div class="arrivalDate">
-            <p class="arrHeader">Return Date</p>
-            <p class="dateField"><input type="text" id="datepicker2"></p>
-        </div>
-        <div class="submit">
-            <button class="submitButton">Find me a flight!</button>
         </div>
     </div>
-<div class="textField">
-    <p class="flightHeader1">Flights</p>
-    
-</div>
-<!--City weather search-->
-<div class='container'>
-    <div class='search'>
-    <div class='row'>
-<h2 class="CitySearch">Search For A City</h2>
-         <div class="row">
-<input type='text' class='searchInput' placeholder="City Name">
-<button type="submit" class="searchBtn"> <h3 class ='BtnName'>Search</h3>
-    <i class="fas fa-search"></i>
-</button>
-        </div>
-     </div>
-    </div>
-</div>
-<!--History Section-->
-<div class='History'></div> 
+    <!--History Section-->
+    <div class='History'></div>
     <div class='Container2'>
-    <div class='Forecast'>
-    <div class='row'>
-    <h4 class='CityName'>City Name</h4>
-    <h4 class='currentdate'></h4>
-    <img class='WeatherIcon'></img>
+        <div class='Forecast'>
+            <div class='row'>
+                <h4 class='CityName'>City Name</h4>
+                <h4 class='currentdate'></h4>
+                <img class='WeatherIcon'></img>
             </div>
         </div>
     </div>
@@ -111,16 +124,19 @@
     </div>
     <div class='row4'>
         <p class='UVindex'>UV Index:</p>
-    <div class="weatherContent">
-        <h5 class="weatherHeader">Weather Forecast</h5>
-        <p id="weatherDisplay"></p>
-    </div>
-    
+        <div class="weatherContent">
+            <h5 class="weatherHeader">Weather Forecast</h5>
+            <p id="weatherDisplay"></p>
+        </div>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
-    
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+            integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+            crossorigin="anonymous"></script>
+        <script src="./assets/js/script.js"></script>
+
 </body>
+
 </html>

@@ -138,7 +138,7 @@ border-radius: 15px;
 .cityPicker{
     
     flex-flow: column;
-    
+    max-width: 40%;
     border: grey 5px solid;
     
 }
