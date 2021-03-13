@@ -1,5 +1,5 @@
 *{
-    margin: 10px;
+    margin: 5px;
     font-family: "lobster",cursive;
 }
 body{
@@ -191,7 +191,7 @@ border-radius: 15px;
     height: 500px;
 }
 
-#flightDisplay{
+.flightDisplay{
     flex-direction: column;
     height: fit-content;
     padding: 5px;
@@ -436,7 +436,7 @@ Fieldset {
 
 .flightHeader{
     position: relative;
-    left:-100px;
+    /* left:-100px; */
     
     margin: 15px 10px;
 }
